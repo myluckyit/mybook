@@ -4,6 +4,6 @@
     - <a href="/js/docs">JS</a>
     - <a href="/vue/docs">VUE</a>
     - <a href="./">NODE</a>
-    - <a href="/webpack/docs">webpack4.0</a>
+    - <a href="/mybook/webpack">webpack4.0</a>
     - <a href="/gulp/docs">gulp</a>
     - <a href="/tools/docs">工具类</a>
