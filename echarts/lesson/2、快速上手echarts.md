@@ -88,20 +88,20 @@
 > 此时我们就完美的完成了一个简单的图表，下面我们来介绍一下第二步中配置项的每个参数分别代表什么意思，常用的属性有哪些？
 
 >> 1、title：设置图表的标题相关内容
->>> text：图表标题
->>> show：是否显示标题
->>> left：设置标题水平位置，left，right，center
->>> bottom：设置标题垂直位置，top，center，bottom
->>> link：主标题文本超链接
->>> target：指定窗口打开主标题超链接，self，blank
->>> padding：标题内边距
->>> textStyle：主标题样式(object)
->>> itemGap：主副标题之间的距离
->>> backgroundColor：标题背景色
->>> subtext：副标题
->>> sublink：副标题超链接
->>> substarget：指定窗口打开副标题超链接，self，blank
->>> subtextStyle：副标题样式
+ text：图表标题
+ show：是否显示标题
+ left：设置标题水平位置，left，right，center
+ bottom：设置标题垂直位置，top，center，bottom
+ link：主标题文本超链接
+ target：指定窗口打开主标题超链接，self，blank
+ padding：标题内边距
+ textStyle：主标题样式(object)
+ itemGap：主副标题之间的距离
+ backgroundColor：标题背景色
+ subtext：副标题
+ sublink：副标题超链接
+ substarget：指定窗口打开副标题超链接，self，blank
+ subtextStyle：副标题样式
 
 >> 2、tooltip：气泡提示框，常用于展示更详细的数据
 >>> show：是否显示该组件
