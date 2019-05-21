@@ -1,4 +1,5 @@
 - WE HAVE MORE
     - <a href="./">NODE</a>
     - <a href="/mybook/webpack">webpack4.0</a>
+    - <a href="/mybook/echarts">echarts</a>
     - <a href="/mybook/2019面试常考知识">2019面试常考知识</a>
