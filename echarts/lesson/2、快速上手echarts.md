@@ -87,7 +87,8 @@
 
 > 此时我们就完美的完成了一个简单的图表，下面我们来介绍一下第二步中配置项的每个参数分别代表什么意思，常用的属性有哪些？
 
->> 1、title：设置图表的标题相关内容
+1、 title：设置图表的标题相关内容
+```
  text：图表标题
  show：是否显示标题
  left：设置标题水平位置，left，right，center
@@ -102,37 +103,46 @@
  sublink：副标题超链接
  substarget：指定窗口打开副标题超链接，self，blank
  subtextStyle：副标题样式
+```
 
->> 2、tooltip：气泡提示框，常用于展示更详细的数据
->>> show：是否显示该组件
->>> axisPointer：坐标轴指示器配置项，可自定义内容
->>> alwaysShowContent：是否永远显示提示框内容
->>> triggerOn：提示框触发的条件，click:点击时触发，mousemove：鼠标移动触发，mousemove|click，同时鼠标移动和点击时触发。
->>> enterable：鼠标是否可进入提示框浮层中，默认为false，如需详情内交互，如添加链接
->>> renderMode：默认以 'html 即额外的 DOM 节点展示 tooltip,'richText' 表示以富文本的形式渲染
->>> formatter：提示框浮层内容格式器，例如：formatter:"{b}的{a}是：{c}",//{a}表示系列名，{b}数据名，{c}数据值
+2、 tooltip：气泡提示框，常用于展示更详细的数据
 
->> 3、legend：图例，表示数据和图表的关联
->>> data：图例的数据数组。数组项通常为一个字符串，每一项代表一个系列的 name，比如：data:['销量']；如果要设置单独一项的样式，也可以把该项写成配置项对象。
+```
+ show：是否显示该组件
+ axisPointer：坐标轴指示器配置项，可自定义内容
+ alwaysShowContent：是否永远显示提示框内容
+ triggerOn：提示框触发的条件，click:点击时触发，mousemove：鼠标移动触发，mousemove|click，同时鼠标移动和点击时触发。
+ enterable：鼠标是否可进入提示框浮层中，默认为false，如需详情内交互，如添加链接
+ renderMode：默认以 'html 即额外的 DOM 节点展示 tooltip,'richText' 表示以富文本的形式渲染
+ formatter：提示框浮层内容格式器，例如：formatter:"{b}的{a}是：{c}",//{a}表示系列名，{b}数据名，{c}数据值
+```
 
->> 4、xAxis：直角坐标系中的横轴，通常默认为类目型
->>> type：坐标轴类型，'value' 数值轴，适用于连续数据。'category' 类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。时间轴，适用于连续的时序数据，与数值轴相比时间轴带有时间的格式化,'log' 对数轴。适用于对数数据。
->>> position：坐标轴位置，top，bottom
->>> name：坐标轴名称
->>> data：类目数据，在类目轴（type: 'category'）中有效。
+3、legend：图例，表示数据和图表的关联
+```
+ data：图例的数据数组。数组项通常为一个字符串，每一项代表一个系列的 name，比如：data:['销量']；如果要设置单独一项的样式，也可以把该项写成配置项对象。
+```
 
->> 5、yAxis：直角坐标系中的纵轴，通常默认为数值型
+4、xAxis：直角坐标系中的横轴，通常默认为类目型
+```
+ type：坐标轴类型，'value' 数值轴，适用于连续数据。'category' 类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。时间轴，适用于连续的时序数据，与数值轴相比时间轴带有时间的格式化,'log' 对数轴。适用于对数数据。
+ position：坐标轴位置，top，bottom
+ name：坐标轴名称
+ data：类目数据，在类目轴（type: 'category'）中有效。
+```
 
->> 6、series：数据系列，一个图表可能包含多个系列，每一个系列可能包含多个数据
->>> name：系列名称，要和legend中data的name对应。
->>> type：设置图标类型
->>> symbol：标记图形(用于折线图)，ECharts 提供的标记类型包括 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，可以通过 'image://url' 设置为图片，其中 URL 为图片的链接，或者 dataURI。
->>> symbolSize：标记图形大小(用于折线图)
->>> label：图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等
->>> areaStyle：区域填充（用于折线图）
->>> smooth：是否平滑曲线显示（用于折线图）
->>> data：系列数据
+5、yAxis：直角坐标系中的纵轴，通常默认为数值型
 
+6、series：数据系列，一个图表可能包含多个系列，每一个系列可能包含多个数据
+```
+ name：系列名称，要和legend中data的name对应。
+ type：设置图标类型
+ symbol：标记图形(用于折线图)，ECharts 提供的标记类型包括 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，可以通过 'image://url' 设置为图片，其中 URL 为图片的链接，或者 dataURI。
+ symbolSize：标记图形大小(用于折线图)
+ label：图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等
+ areaStyle：区域填充（用于折线图）
+ smooth：是否平滑曲线显示（用于折线图）
+ data：系列数据
+```
 
 
 
