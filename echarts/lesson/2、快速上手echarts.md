@@ -74,7 +74,6 @@
 					data:[2,5,12]
 				}]
 			}
-
         // 第三步： 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
