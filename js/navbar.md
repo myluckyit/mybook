@@ -1,5 +1,5 @@
 - WE HAVE MORE
-    - <a href="./">NODE</a>
+    - <a href="./">js</a>
     - <a href="/mybook/nodejs">NODE</a>
     - <a href="/mybook/webpack">webpack4.0</a>
     - <a href="/mybook/echarts">echarts</a>
