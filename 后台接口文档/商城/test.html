@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var arr = [{
+				id:1,
+				name:'非诚勿扰',
+				desc:"大型相亲节目",
+				time:"2019-05-02"
+			},{
+				id:2,
+				name:'非诚勿扰',
+				desc:"大型相亲节目",
+				time:"2019-05-02"
+			},{
+				id:3,
+				name:'非诚勿扰',
+				desc:"大型相亲节目",
+				time:"2019-05-03"
+			},{
+				id:3,
+				name:'非诚勿扰',
+				desc:"大型相亲节目",
+				time:"2019-05-03"
+			}]
+			var newArr = [];
+			var t="";
+			var children=[];
+			var j=0;
+			arr.forEach((val,index)=>{
+				if(t==val.time){
+					children.push(val);
+				}else{				
+					t = val.time;
+					newArr[j]=new Array;
+					newArr[j].push(val);
+					children = newArr[j];
+					j++;
+				}
+			})
+			console.log(newArr);
+			
+			$.ajax({
+				type:"get",
+				url:"https://easy-mock.com/mock/5c88d357b3f8353242f22cb5/022test/userInfo",
+				data:{
+					age:18
+				},
+				success(res){
+					console.log(res);
+				}
+			});
+			
+		</script>
+	</body>
+</html>

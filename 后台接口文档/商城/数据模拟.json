@@ -1,0 +1,38 @@
+{
+  "data": {
+    result: function({
+      _req,
+      Mock
+    }) {
+      var result = [{
+        totalPerson: "500", //做题总人数
+        errPerson: "100", //做错的人数
+        rightPerson: "350", //做对的人数
+        difficulty: "2", //难度
+        type: 1, //类型
+        tit: "html是什么？", //题目
+        //选项
+        options: ["HTML是超文本标记语言", "HTML是超文本标记语言", "HTML是超文本标记语言", "HTML是超文本标记语言"],
+        answer: "1", //答案
+      }];
+      // 调用此接口时，传入题目类型type:1，题目数量quantity，数量自己定义
+      if (_req.query.type != '' && _req.query.quantity != '') {
+        var res = [];
+        for (var i = 0; i < result.length; i++) {
+          if (i % _req.query.quantity == 0) {
+            var x = result.splice(i, _req.query.quantity);
+            res.push(x);
+            i -= _req.query.quantity;
+          }
+        }
+        if (!res[_req.query.type - 1]) {
+          return res[res.length - 1];
+        } else {
+          return res[_req.query.type - 1];
+        }
+      } else {
+        return "兄弟你忘了传数据了！"
+      }
+    }
+  }
+}
