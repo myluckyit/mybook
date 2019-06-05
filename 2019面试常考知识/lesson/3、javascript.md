@@ -1252,4 +1252,23 @@ f2();
 205、给定一个百度坐标系数组，根据用户当前位置由近到远排序，返回新的数组（可上网查询资料）
 
 
+206、请根据以下规律编写函数fun
 
+```js
+fun(1).value		//1
+fun(1)(2).value		//5
+fun(1)(2)(3).value	//14
+```
+答案：
+
+```
+var fun = function f(val){
+	f.value=val;
+	var init = function res(val){				
+		f.value += val*val;
+		res.value = f.value-1;
+		return init;
+	}
+	return init(val);
+}
+```
