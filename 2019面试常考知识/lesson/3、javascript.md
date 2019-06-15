@@ -1259,9 +1259,11 @@ fun(1).value		//1
 fun(1)(2).value		//5
 fun(1)(2)(3).value	//14
 ```
+
+
 答案：
 
-```
+```js
 var fun = function f(val){
 	f.value=val;
 	var init = function res(val){				
