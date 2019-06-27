@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.test{
+				display: block;
+				width: 0;
+				height: 0;
+				border-left: 8px solid transparent;
+				border-right: 8px solid #dadada;
+				border-top: 8px solid #dadada;
+				border-bottom: 8px solid transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="test"></div>
+		<div id="app">
+			<a href="#login">登录</a>
+			<a href="#index">首页</a>
+			<div class="main"></div>
+		</div>
+		<script type="text/javascript">
+			let login = "<h1>登录页</h1>";
+			let index = "<h1>首页</h1>";
+			let renderNode = login;
+			let main = document.querySelector(".main");
+			main.innerHTML = renderNode;
+			window.addEventListener("hashchange",function(){
+				switch (location.hash){
+					case "#login":
+						renderNode = login
+						break;
+					default:
+						renderNode = index
+						break;
+				}
+				main.innerHTML = renderNode;
+			})
+			
+			function node(){
+				this.element = document.createElement('div')
+				this.textContent = '做网站'
+				this.element.innerHTML = "就上凡科建站"
+				this.element.addEventListener("click",this.func,true)
+				this.element.onclick = this.func.bind(this.element)
+				this.element.addEventListener("click",this.func.call(this))
+			}
+			node.prototype.render = function(){
+				document.body.appendChild(this.element)
+			}
+			node.prototype.func = function(){
+				console.log(this.textContent)
+			}
+//			var obj = new node()
+//			obj.render()
+//			obj.func()
+//			obj.element.click()
+//			
+			try{
+				oh()
+				wow()
+				console.log(oh);
+				console.log(oh);
+				console.log(wow);
+			}catch(e){
+				//TODO handle the exception
+				setTimeout(function(){
+					console.log(wow)
+					console.log(oh)
+				})
+			}
+			function oh(){
+				console.log("更好玩的h5")
+			}
+			var wow = function(){
+				console.log("更炫酷的h5")
+			}
+			var oh = "朋友圈疯传的h5传单"
+			var wow = "凡科微传单"
+			
+			
+		</script>
+	</body>
+</html>

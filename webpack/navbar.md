@@ -4,4 +4,5 @@
     - <a href="/mybook/微信小程序">微信小程序</a>
     - <a href="./">webpack4.0</a>
     - <a href="/mybook/echarts">echarts</a>
+    - <a href="/mybook/数学">数学</a>
     - <a href="/mybook/2019面试常考知识">2019面试常考知识</a>

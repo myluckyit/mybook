@@ -1,8 +1,8 @@
 - WE HAVE MORE
     - <a href="/mybook/js">js</a>
     - <a href="/mybook/nodejs">NODE</a>
-    - <a href="./">微信小程序</a>
+    - <a href="/mybook/微信小程序">微信小程序</a>
     - <a href="/mybook/webpack">webpack4.0</a>
     - <a href="/mybook/echarts">echarts</a>
-    - <a href="/mybook/数学">数学</a>
+    - <a href="./">数学</a>
     - <a href="/mybook/2019面试常考知识">2019面试常考知识</a>

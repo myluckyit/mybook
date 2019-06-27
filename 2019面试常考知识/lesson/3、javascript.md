@@ -1274,3 +1274,173 @@ var fun = function f(val){
 	return init(val);
 }
 ```
+
+207、JavaScript与ECMAscript的关系，及各个版本浏览器的支持情况
+
+```
+ECMAScript是标准，JavaScript是ECMAScript的一种实现，一个完整的JavaScript实现应该由以下三个部分组成：ECMAScript，DOM，BOM。
+es5目前所有主流浏览器都支持，es6+目前支持情况并不是所有的浏览器都能够完美支持，其中对 ES6 新特性最友好的是 Chrome 和 Firefox 浏览器。所以用到es6+的情况下一般需要通过babel转义成es5。
+```
+
+208、原生js获取页面中所有CheckBox input的方法有哪些
+
+```js
+方法一：
+document.querySelectorAll("input[type=checkbox]");
+
+方法二：
+var inputs = document.getElementsByTagName("input");
+var boxs = [];
+for (let i = 0; i < inputs.length; i++) {
+	if (inputs[i].type == "checkbox") {
+		boxs.push(inputs[i])
+	}
+}
+console.log(boxs)
+```
+
+209、判断一个对象是数组的几种方法
+
+```js
+	1.instanceof 判断一个对象是否是由某个类型创建出来的
+	
+	　　obj instanceof Array = true   //则表示是数组
+	2.Object.prototype.toString()方法
+	
+	　　Object.prototype.toString.call(arr)   == [object Array]
+	
+	3.Array.prototype.isPrototypeOf(obj)  //判断指定对象是否存在于另一对象的原型链中
+	
+	　　Array.prototype.isPrototypeOf(obj)  == true
+	
+	4.Obejct.getPrototypeOf(arr) == Array.prototype
+	
+	　　Object.getPrototypeOf(arr)== Array.prototype  //返回对象__proto__指向的原型prototype 
+	
+	5.最简单的方法（存在兼容）
+	
+	　　Array.isArray(arr) ==  true
+```
+
+210、字符串转换为整形的方法有哪些？如果将字符“abc”转换为整形，返回值是什么？
+
+```js
+字符串转换为整形：
+	1. parseInt()
+	2. Number()
+	
+返回值：NaN
+```
+
+211、call，callee，caller，apply的区别与作用
+
+```
+call(),apply(),caller(),callee()作用都是调用某个函数或方法
+
+caller返回一个函数引用，这个函数调用了当前的函数；
+使用这个属性应该注意：
+	a、这个属性只有在函数执行时才有用
+	b、如果在javascript程序中，函数由顶层调用的，则返回null
+
+callee返回正在执行的函数本身的引用，他是arguments的一个属性
+使用callee时应注意：
+	a、这个属性只有在函数执行时才有效
+	b、他有一个length属性，可以获取形参的个数，因此可以用来比较形参和实参个数是否相等，系比较arguments.length是否相等。
+
+
+call(),apply()区别在于传入参数不同。
+详情见：https://myluckyit.github.io/mybook/js/#/lesson/call%E5%92%8Capply%E5%8F%8Abind
+
+```
+
+212、在调试js过程中如何输入堆栈
+
+213、请写出下面 //Q后面的结果
+
+```js
+var a;
+			console.log(typeof a); //Q1  undefined
+			a = null;
+			console.log(typeof a); //Q2  object
+//			console.log(b);   //Q3  报错
+			
+			a = new Object();
+			a.value = 1;
+			b = a;
+			b.value = 2;
+			console.log(a.value); //Q4  2
+			function c(){
+				console.log(a);//Q5  undefined
+				var a = 2;
+				console.log(a);//Q6  2
+			}
+			c();
+```
+
+214、看下面的代码，给出输结果
+
+```js
+for(var i=1;i<=3;i++){
+	setTimeout(function(){
+		console.log(i)
+	},0);
+}
+
+Q1: 上述代码将输出什么？
+输出3次4
+
+Q2: 如何让上述代码输入1 2 3？
+将循环中的var改为let即可，或者用闭包也可。
+
+```
+
+215、对作用域上下文和this的理解，看下面代码：
+
+```js
+
+var user = {
+	count:1,
+	getCount:function(){
+		return this.count
+	}
+}
+console.log(user.getCount()); //Q1 =1
+var func = user.getCount;
+console.log(func());		//Q2   =undefined
+
+```
+
+216、ajax怎么判断请求成功还是失败，原生js有没有什么方法可以代替ajax
+
+217、看下面的代码，1.输出什么，2.foo的类型是什么？
+
+```js
+var foo = '11'+2-'1';
+console.log(foo); // Q1? 111  数值类型
+var foo = '11'+2+'1';
+console.log(foo); //Q2? 1121  字符串类型
+
+```
+
+218、如何获取传入函数的所有参数（不确定参数数量）?
+
+```
+可以通过arguments来获取
+```
+
+219、直接在对象的原型上添加方法是否安全？例如在object对象上，有什么缺点
+
+```
+会导致原型污染，一般不改变默认方法执行的话，危险不是太大，
+如果改变了默认方法，如果还有其他库，则可能出现未知问题。
+```
+
+220、请说明在什么情况下会考虑使用闭包或者IIFE(自执行函数)，及两者的区别？
+
+```js
+当一个函数需要用到另一个函数变量的情况下可以使用闭包，比如做选项卡效果，手风琴效果都可以用到闭包。
+
+立即执行函数常用于第三方库，好处在于隔离作用域，任何一个第三方库都会存在大量的变量和函数，为了避免变量污染（命名冲突）
+比如封装一个公共的方法的时候就用到了，用立即执行函数的目的就是避免变量污染。
+```
+
