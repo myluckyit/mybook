@@ -3,7 +3,7 @@
     - <a href="/mybook/nodejs">NODE</a>
     - <a href="/mybook/微信小程序">微信小程序</a>
     - <a href="/mybook/webpack">webpack4.0</a>
-    - <a href="./">echarts</a>
+    - <a href="/mybook/echarts">echarts</a>
     - <a href="/mybook/数学">数学</a>
-    - <a href="/mybook/服务端知识">服务端知识</a>
+    - <a href="./">服务端知识</a>
     - <a href="/mybook/2019面试常考知识">2019面试常考知识</a>

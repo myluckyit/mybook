@@ -6,4 +6,5 @@
     - <a href="./">git快速入门</a>
     - <a href="/mybook/echarts">echarts</a>
     - <a href="/mybook/数学">数学</a>
+    - <a href="/mybook/服务端知识">服务端知识</a>
     - <a href="/mybook/2019面试常考知识">2019面试常考知识</a>

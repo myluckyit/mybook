@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <li class="page-item">
+		      <a class="page-link" href="#" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		        <span class="sr-only">Previous</span>
+		      </a>
+		    </li>
+		    <li class="page-item"><a class="page-link" href="#">1</a></li>
+		    <li class="page-item"><a class="page-link" href="#">2</a></li>
+		    <li class="page-item"><a class="page-link" href="#">3</a></li>
+		    <li class="page-item">
+		      <a class="page-link" href="#" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		        <span class="sr-only">Next</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+		<script type="text/javascript">
+			/**
+			 * 1、选择排序
+			 * 
+			 * 在时间复杂度上表现最稳定的排序算法之一，因为无论什么数据进去都是O(n²)的时间复杂度。。。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。
+			 * 
+			 * */
+			function selectionSort(arr) {
+			    var len = arr.length;
+			    var minIndex, temp;
+			    for(var i=0;i<len-1;i++){
+			    	minIndex = i;
+			    	for(var j=i+1;j<len;j++){
+			    		if(arr[j]<arr[minIndex]){
+			    			minIndex = j;
+			    		}
+			    	}
+			    	temp = arr[i];
+			    	arr[i] = arr[minIndex];
+			    	arr[minIndex] = temp;
+			    }
+			    return arr;
+			}
+			var arr = [5,1,2,8,7];
+			let res = selectionSort(arr);
+			console.log(res);
+			
+			/**
+			 * 2、插入排序
+			 * 
+			 * */
+			function insertionSort(arr) {
+			    var len = arr.length;
+			    var preIndex, current;
+			    for (var i = 1; i < len; i++) {
+			        preIndex = i - 1;
+			        current = arr[i];
+			        while(preIndex >= 0 && arr[preIndex] > current) {
+			            arr[preIndex+1] = arr[preIndex];
+			            preIndex--;
+			        }
+			        arr[preIndex+1] = current;
+			    }
+			    return arr;
+			}
+			
+		</script>
+	</body>
+</html>
