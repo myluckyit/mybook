@@ -33,6 +33,12 @@
 
 4、选择要安装的内容：选择4安装全部
 
+安装完后,默认的后台管理地址如下
+http://ip:8080
+用户名:admin 默认密码:wdlinux.cn
+mysql默认的管理用户名:root 默认密码:wdlinux.cn
+
+
 5、卸载wdcp
 ```
 	sh lanmp.sh un
