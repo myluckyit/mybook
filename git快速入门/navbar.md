@@ -2,6 +2,7 @@
     - <a href="./mybook/js">js</a>
     - <a href="/mybook/nodejs">NODE</a>
     - <a href="/mybook/微信小程序">微信小程序</a>
+    - <a href="/mybook/vue">vue</a>
     - <a href="/mybook/webpack">webpack4.0</a>
     - <a href="./">git快速入门</a>
     - <a href="/mybook/echarts">echarts</a>
