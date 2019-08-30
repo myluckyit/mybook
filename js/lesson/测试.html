@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<script type="text/javascript">
+			//防抖
+			var ipt = document.querySelector("input");
+			function debounce(func, wait) {
+			    let timeout;
+			    return function () {
+			        let context = this;
+			        console.log(context)
+			        let args = arguments;
+			
+			        if (timeout) clearTimeout(timeout);
+			        
+			        timeout = setTimeout(() => {
+			            func.apply(context, args)
+			        }, wait);
+			    }
+			}
+//			ipt.oninput = debounce(function(){
+//				console.log("测试")
+//			},1000)
+			var timeOut; 
+			ipt.addEventListener("input",function(){
+				var that = this;
+				if(timeOut){
+					clearTimeout(timeOut)
+				}
+				timeOut = setTimeout(function(){
+					console.log(that.value);
+				},1000)
+			})
+		</script>
+	</body>
+</html>
