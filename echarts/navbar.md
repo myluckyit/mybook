@@ -3,6 +3,7 @@
     - <a href="/mybook/nodejs">NODE</a>
     - <a href="/mybook/微信小程序">微信小程序</a>
     - <a href="/mybook/vue">vue</a>
+    - <a href="/mybook/nuxtjs">nuxt.js</a>
     - <a href="/mybook/webpack">webpack4.0</a>
     - <a href="./">echarts</a>
     - <a href="/mybook/数学">数学</a>
