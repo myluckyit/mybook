@@ -2,3 +2,6 @@
 * [nuxtjs的安装和目录结构](lesson/1.nuxtjs的安装和目录结构.md)
 * [nuxtjs公共文件配置](lesson/2.公共文件配置.md)
 * [nuxtjs路由配置和传参](lesson/3.路由配置和传参.md)
+* [nuxt默认模板和默认布局](lesson/4.nuxt默认模板和默认布局.md)
+* [asyncData方法获取数据](lesson/5.asyncData方法获取数据.md)
+* [定义页面独立meta](lesson/6.定义页面独立meta.md)
