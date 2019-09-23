@@ -37,7 +37,7 @@ type nul>dist/index.html nul>src/index.js
 
 以上步骤运行结果如下图：
 
-![创建文件](img/1.png)
+![创建文件](./img/1.png)
 
 ## 三、开始使用webpack
 
@@ -47,7 +47,7 @@ type nul>dist/index.html nul>src/index.js
 npm init -y  //-y：表示按默认值创建package.json文件
 ```
 
-![初始化package.json文件](img/2.png)
+![初始化package.json文件](./img/2.png)
 
 package.json文件里面的内容是最初的样子
 
@@ -69,31 +69,31 @@ package.json文件里面的内容是最初的样子
 
 此时我们的项目结构如下图：
 
-![项目结构图](img/3.png)
+![项目结构图](./img/3.png)
 
 2、webpack4.x中打包默认找src/index.js作为默认入口，可以直接在Dos中输入
 命令webpack 将当前的内容进行一个简答的打包
 
-![webpack简单的打包](img/4.png)
+![webpack简单的打包](./img/4.png)
 
 这时候你可以看到项目中的dist文件夹下多了一个main.js文件
 
-![webpack打包后的项目结构](img/5.png)
+![webpack打包后的项目结构](./img/5.png)
 
 3、细心的小伙伴应该看到打包的时候终端中会出现黄色的警告提示
 
-![webpack打包黄色警告](img/6.png)
+![webpack打包黄色警告](./img/6.png)
 
 mode是webpack中独有的，有两种打包环境，一个是开发环境：development，另外一个是生产环境：production
 开发环境模式未压缩文件，生产环境模式生产的是压缩后的文件
 
 打包的时候输入webpack --mode=development或者webpack --mode=production就不会出现警告提示了
 
-![webpack打包声明了打包模式](img/7.png)
+![webpack打包声明了打包模式](./img/7.png)
 
 同时可以看到项目文件夹下面多了一个node_modules文件夹
 
-![webpack打包后的项目结构](img/8.png)
+![webpack打包后的项目结构](./img/8.png)
 
 
 ## 三、自己配置一些简单的打包方式
@@ -106,7 +106,7 @@ type nul>config/webpack.dev.js
 
 此时项目结构如下：
 
-![创建文件后的项目结构](img/9.png)
+![创建文件后的项目结构](./img/9.png)
 
 2、移除掉dist文件夹下的main.js和src下的index.js文件，然后我们自己来配置
 
@@ -116,14 +116,14 @@ del src\index.js dist\main.js
 
 项目结构如下：
 
-![删除文件后的项目结构](img/10.png)
+![删除文件后的项目结构](./img/10.png)
 
 3、现在在src文件夹下面创建main.js文件
 
 ```
 type nul>src/main.js
 ```
-![创建文件后的项目结构](img/11.png)
+![创建文件后的项目结构](./img/11.png)
 
 4、进入到webpack.dev.js文件中进行配置，具体在代码中注释
 
@@ -154,21 +154,21 @@ module.exports = {
 
 4.1、现在不能执行之前的webpack --mode="development"命令了会报下面的错误
 
-![错误提示](img/12.png)
+![错误提示](./img/12.png)
 
 这里是因为webpack4打包默认找的src下面的index.js入口，我们前面已经删除了，这里src下面死main.js文件，
 所以找不到就报ERROR in Entry module not found: Error: Can't resolve './src' in '/Users/yubo/Desktop/www/study_webpack2'错误，
 所以这里我们到packsge.json里面配置下命令，让打包的时候执行我们在config/webpack.dev.js下面配置的入口。
 
-![修改package.json文件](img/13.png)
+![修改package.json文件](./img/13.png)
 
 这个时候我们在DOS中输入命令 npm run build就可以了
 
-![打包成功](img/14.png)
+![打包成功](./img/14.png)
 
 打包后我们可以看到在dist文件夹下多了一个bundle.js文件
 
-![打包成功](img/15.png)
+![打包成功](./img/15.png)
 
 5、上面打包只有一个入口文件，那当我们有多个入口文件的时候那怎么办呢？
 比如我们再在src文件夹下新建一个入口文件main2.js
@@ -198,11 +198,11 @@ output:{
 
 此时我们再次执行npm run build命令来看看
 
-![多入口文件打包](img/16.png)
+![多入口文件打包](./img/16.png)
 
 已经打包好了，这个时候看下出口文件dist下面也打包生成了两个相同入口名字的文件
 
-![多入口文件打包](img/17.png)
+![多入口文件打包](./img/17.png)
 
 我们可以通过 del dist\bundle.js 把之前打包的不需要的bundle.js文件删除掉
 
@@ -228,15 +228,15 @@ devServer:{
 
 这个时候直接执行命令webpack-dev-server会报错
 
-![报错](img/18.png)
+![报错](./img/18.png)
 
 这个时候我们可以到package.json里面配置下
 
-![配置package.json](img/19.png)
+![配置package.json](./img/19.png)
 
 这个时候我们终端输入命令npm run server就可以跑起来了
 
-![开启本地服务](img/20.png)
+![开启本地服务](./img/20.png)
 
 然后我们再到项目dist文件夹下面的index.html 文件中引入打包的两个js，
 保存后再到src文件下面分别给main.js和main2.js文件里面写一些东西。
@@ -250,7 +250,7 @@ main2.js
 这个时候再再终端中输入命令 npm run server 然后再打开浏览器再地址栏输入 locahost:8888 就可以看到效果了，
 注意这里的 locahost:9090 是之前你在下面这个文件配置的
 
-![浏览器预览效果](img/21.png)
+![浏览器预览效果](./img/21.png)
 
 2、开启本地服务并实现实时刷新浏览器效果
 
@@ -304,7 +304,7 @@ css文件打包需要有相应的css依赖文件style-loader和css-loader，
 npm install style-loader css-loader --save-dev
 ```
 
-![下载css依赖](img/23.png)
+![下载css依赖](./img/23.png)
 
 安装成功后我们先在src中新建css文件夹，并在css文件夹下新建index.css文件。
 
@@ -316,7 +316,7 @@ type nul>src\css\index.css
 
 index.css文件内容如下：
 
-![创建css文件](img/22.png)
+![创建css文件](./img/22.png)
 
 然后需要在入口文件中引入该css文件
 
@@ -347,11 +347,11 @@ module.exports = {
 ```
 
 此时，我们已经把css打包环境配置好了，再次运行npm run server
-![打包css](img/24.png)
+![打包css](./img/24.png)
 
 打包成功后，打开浏览器，我们的css已经生效了。
 
-![浏览器运行效果](img/25.png)
+![浏览器运行效果](./img/25.png)
 
 当我们改变js文件或者css文件的时候，浏览器都会自动刷新。
 
@@ -395,7 +395,7 @@ webpack.dev.js
 
 这时候再DOS中运行npm run build进行打包即可。
 
-![打包成功](img/26.png)
+![打包成功](./img/26.png)
 
 2、打包HTML文件
 
@@ -423,18 +423,18 @@ new htmlPlugin({
 
 运行npm run build，可以看到dist文件下已经生产一个index.html文件，且对应的js文件也已经帮我们自动引入了。
 
-![打包成功](img/27.png)
+![打包成功](./img/27.png)
 
 3、css中的图片处理
 
-在处理图片之前，我们先在src文件夹下新建一个img文件夹并在里面放置一张图片，
+在处理图片之前，我们先在src文件夹下新建一个./img文件夹并在里面放置一张图片，
 然后在index.html中设置一个类名为test的div元素，最后在index.css中设置这个元素的背景图片。
 
-![项目目录结构](img/28.png)
+![项目目录结构](./img/28.png)
 
 此时如果我们直接运行npm run server会报错
 
-![项目目录结构](img/29.png)
+![项目目录结构](./img/29.png)
 
 这里是因为我们缺少loader的解析,现在需要下载两个解析图片的loader  file-loader 和 url-loader
 
