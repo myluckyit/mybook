@@ -1,98 +1,81 @@
-# webpack的使用
+# webpack搭建vue脚手架
 
-## 一、初始化package.json文件
+## 一、创建项目基本结构
 
-```
-	npm init 
-```
+1. 创建一个项目名为vue-webpack-cli
+2. 在项目根目录中创建src文件，在src文件下创建如下文件：
 
-## 二、全局安装 webpack、webpack-cli
-
-```
-	npm i webpack webpack-cli -g
-	or
-	cnpm i webpack webpack-cli -g
-``
-
-**注意：如果 webpack 安装在全局，那么 CLI 也需要装在全局**
-
-i是install的缩写，-D是--save-dev的缩写
-
-## 三、在src目录中创建index.html和index.js
-
-1、在package.json中增加build命令
+src/app.vue
 
 ```
-	"script":{
-		"build":"webpack"
-	}
-```
-
-index.js
-
-```
-	console.log("入口文件")
-```
-
-2、执行打包命令
-
-```
-	npm run build
-```
-
-## 四、安装vue、vue-loader(用于解析vue文件)
-
-```
-	cnpm i vue vue-loader -D
-```
-
-## 五、新建App.vue文件
-
-```
-	App.vue文件
-	
 	<template>
 		<div id="app">
-			{{msg}}
+			<h>{{msg}}</h>
 		</div>
 	</template>
 	
 	<script>
 		export default {
 			data(){
-				return {				
-					msg:"hello world!"
+				return {
+					msg: "hello vue!"
 				}
 			}
 		}
 	</script>
-```
 
 ```
-	index.js文件
-	
-	console.log("入口文件");
-	import Vue from "vue"
-	import App from "./App.vue"
-	
+
+src/index.html
+
+```html
+	<body>
+		<div id="app"></div>
+	</body>
+```
+
+src/main.js
+
+```js
+	//vue入口文件
+	import Vue from 'vue'
+	import App from './app.vue'
 	
 	new Vue({
-		el:"#root",
-		render:h=>h(App)
+		el: "#app",
+		render: h=>h(App)
 	})
+
 ```
 
-## 六、在项目根目录创建webpack.config.js文件
+## 二、在项目根目录中创建package.json文件
+
+```
+	npm init -y
+```
+
+## 三、在项目根目录下下载vue, vue-loader
+
+```
+npm i vue vue-loader html-webpack-plugin --save-dev
+```
+
+## 四、在项目根目录下创建webpack.config.js文件
 
 ```
 	webpack.config.js文件
 	
 	const path = require('path')
+	const webpack = require("webpack")
 	//引入vue-loader插件
 	const VueLoaderPlugin = require('vue-loader/lib/plugin')
+	//解析HTML
+	const htmlWebpackPlugin = require("html-webpack-plugin")
 	
 	module.exports = {
-		mode:"production",//模式 ,production生产模式，development开发模式
+		entry: {
+			main: "./src/main.js"
+		},
 		module:{			//模块读取
 			rules:[			//定义文件读取规则
 				{
@@ -102,189 +85,150 @@ index.js
 			]
 		},
 		plugins:[  //使用插件
-			new VueLoaderPlugin()
-		]
+			new webpack.HotModuleReplacementPlugin(),
+			new VueLoaderPlugin(),
+			new htmlWebpackPlugin({
+				template: "./src/index.html"
+			})
+		],
+		devServer: {
+			contentBase: path.resolve(__dirname,"./src"),
+			host: "localhost",
+			port: 9090,
+			compress: true,
+			hot: true,
+			open: true	//执行命令自动打开浏览器
+		}
 	}
 
 ```
 
-此时运行npm run build，会报错。
+## 五、打开package.json文件进行入下配置：
+
+```
+{
+	"scripts": {
+    	"serve": "webpack-dev-server --mode=development", 	//开发模式
+    	"build": "webpack --mode=production"				// 生产模式
+  	}
+}
+```
+
+此时运行npm run serve，会报错。
 再在项目中按钮webpack和webpack-cli即可
+以及vue-template-compiler.
 ```
-	npm i webpack webpack-cli -D
+	npm i webpack webpack-cli vue-template-compiler -D
 	or
-	cnpm i webpack webpack-cli -D
-```
-运行npm run build即可打包成功
-
-## 七、配置开发模式
-
-1、修改package.json文件的运行命令
-
-```
-	"scripts":{
-		"serve":"webpack-dev-server --mode development --open",
-		"build":"webpack --mode production"
-	}
+	cnpm i webpack webpack-cli vue-template-compiler -D
 ```
 
-2、安装webpack-dev-server
+运行npm run serve即可在浏览器中打开localhost:9090
+（注意：不行的话，把node_modules文件删除，重新下载所有依赖即可）
+
+## 六、解析vue中的css
+
+1. 下载vue-style-loader, css-loader.
 
 ```
-	npm i webpack-dev-server -D
+	npm i vue-style-loader css-loader
 ```
 
-3、配置webpac.config.js参数
-
-安装：html-webpack-plugin
+2. 在webpack.config.js中添加如下配置
 
 ```
-	cnpm i -D html-webpack-plugin
-```
-
-```
-	// 引入模块
-	const path = require('path')    
-	const webpack = require("webpack");
-	const HtmlWebPackPlugin = require("html-webpack-plugin");   
-	const VueLoaderPlugin = require('vue-loader/lib/plugin')    
-	
-	module.exports = {
-	    mode: 'development',
-	    entry:{
-	        index:'./src/index.js',
-	    },
-	    output:{
-	        path:path.resolve(__dirname,'dist'),
-	        filename:'[name].bundle.js'
-	    },
-	    module: {
-	        rules: [
-	        {
-	            test: /\.vue$/,
-	            loader: 'vue-loader'
-	        },
-	        ]
-	    },
-	    // 使用插件
-	    plugins: [
-	        new HtmlWebPackPlugin({
-	            title:'webpack项目',
-	            template:'./src/index.html',
-	            filename:'index.html',
-	        }),
-	        new VueLoaderPlugin()
-	    ],
-	    devServer: {
-	        contentBase: path.join(__dirname, "src"),  //选择服务器路径,即服务器根目录选择
-	        compress: true,         
-	        port: 8033,             //端口
-	        host: "127.0.0.1",      //服务器的ip地址
-	    }
-	}
-
-```
-
-### 八、热更新
-
-在webpack.config.js中引入webpack模块
-
-const webpack=require('webpack');
-
-
-添加插件
-```
-	plugins:[
-	    new HtmlWebPackPlugin({
-	        title:'略略略',
-	        template:'./src/index.html',
-	        filename:'index.html',
-	    }),
-	    new webpack.HotModuleReplacementPlugin()    //引入热更新插件
+{
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: [
+					"vue-style-loader",
+					"css-loader"
+				]
+			}
+		]
 	]
-```
-配置devServer参数
-
-```
-	devServer:{
-	    host:'localhost',   //服务器的ip地址
-	    port:1573,  //端口
-	    open:true,  //自动打开页面，
-	    hot:true,   //开启热更新
-	}
+}
 ```
 
-## 九、css-loader 和 sass-loader
-先安装：
+## 七、解析vue中的scss
+
+1. 下载sass-loader, node-sass
 
 ```
-    npm i css-loader node-sass style-loader sass-loader vue-style-loader -D
+	npm i sass-loader, node-sass
 ```
 
-然后在rules规则中加入： 注意，vue-style-loader要放在前面
+2. 在webpack.config.js中添加如下配置
 
 ```
-	{
-	    test: /\.css$/,
-	    use:['vue-style-loader','css-loader']
-	    },
-	{
-	    test: /\.scss$/,
-	    use: [
-	        'vue-style-loader',
-	        'css-loader',
-	        'sass-loader'
-	    ],
-	},
-```
-将css样式单独抽离成文件
-webpack4.0 版本下 使用 mini-css-extract-plugin
-
-引入后再rules中加入：
+module: {
+		rules: [
+			//定义scss的匹配规则
+			{
+				test: /\.scss$/,
+				use: [
+					"vue-style-loader",
+					"css-loader",
+					"sass-loader"
+				]
+			}
+		]
+}
 
 ```
-	{
-	    test: /\.css$/,
-	    use: [
-	        MiniCssExtractPlugin.loader,
-	        // 'vue-style-loader', 
-	        'css-loader',
-	    ],
-	    exclude: /node_modules/,              // 排除
-	    include: /src/,
-	},
-	{
-	    test: /\.scss$/,
-	    use: [
-	        'vue-style-loader',
-	        'css-loader',
-	        'sass-loader'
-	    ],
-	    exclude: /node_modules/,              // 排除
-	    include: /src/,
-	},
-```
-mini-css-extract-plugin貌似可以直接取替vue-style-loader
 
-## 十、webpack4下的babel 7.x
-安装：
+## 八、babel配置
 
-webpack 4.x + babel-loader 8.x + babel 7.x
-```	
-	npm install -D babel-loader @babel/core @babel/preset-env webpack
-```
-
-webpack 4.x + babel-loader 7.x + babel 6.x
-```
-	npm install -D babel-loader@7 babel-core babel-preset-env webpack
-```
-
-在配置文件中的 rules加入：
+1. 下载对应loader
 
 ```
-	{
-	    test: /\.js$/,
-	    loader: 'babel-loader',
-	    include: /src/
-	}
+npm install -D babel-loader@7 babel-core babel-preset-env
 ```
+
+2. 在webpack.config.js中添加如下配置
+
+```
+module: {
+		rules: [
+			//babel规则
+			{
+				test:/\.js$/,
+				use: ['babel-loader'],
+    			include: /src/
+			}
+		]
+}
+```
+
+# 九、定义图片匹配规则
+
+1. 下载
+
+```
+npm i url-loader file-loader -D
+```
+
+2. 在webpack.config.js中添加如下配置
+
+```
+module: {
+		rules: [
+			//babel规则
+			{
+				test: /\.(jpg|png|gif|svg|jpeg)/,
+				use: [
+					{
+						loader: "url-loader",
+						loader: "file-loader",
+						options: {
+							limit: 1024 //限制图片大小
+						}
+					}
+				]
+			}
+		]
+}
+```
+
