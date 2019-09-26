@@ -3,3 +3,4 @@
 * [vue常用技巧](lesson/2.vue常用技巧.md)
 * [sort实现多条件排序](lesson/sort实现多条件排序.md)
 * [vue中使用百度地图定位](lesson/3.vue中使用百度地图定位.md)
+* [制作vue插件](lesson/4.vue插件.md)
