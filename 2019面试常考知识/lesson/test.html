@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			// 1
+			var a = 10;
+
+			function foo() {
+				console.log(a); //undefined
+				var a = 20;
+			}
+			foo();
+
+			// 2
+			var array = [];
+			for(var i = 0; i < 3; i++) {
+				array.push(() => i);
+			}
+			var newArray = array.map(el => el())
+			console.log(newArray); // ???
+
+			function foo() {
+				setTimeout(foo, 0); // 是否存在堆栈溢出错误?
+			}
+			foo();
+
+			var a = 10;
+			if(function b() {}) {
+				a += typeof(b)
+			}
+			console.log(a);
+
+			setTimeout(() => {
+				console.log("setTimeout");
+			})
+			new Promise(function(resolve, reject) {
+				console.log("promise");
+			})
+
+			//			var m = 1,j=k=0
+			//			function add(n){
+			//  return n = n+1;
+			//}
+			//			y = add(m)
+			//			console.log(y)
+			//			function add(n){
+			//  return n = n+3;
+			//}
+			//			z = add(m)
+			//			console.log(z)
+
+			//			var foo = 1;
+			//			function bar(){
+			//				function foo(){
+			//					return 100;
+			//				}
+			//				foo=10;
+			//				return;
+			//			}
+			//			bar();
+			//			console.log(foo);
+
+			//			(function test(){
+			//				test = 111;
+			//				console.log(test);
+			//			})()
+
+			var obj = {
+				x: 1,
+				y: 2,
+				z: 3
+			};
+			obj[Symbol.iterator] = function*() {
+				yield 1;
+				yield 2;
+				yield 3;
+			}
+			console.log(obj);
+			console.log([...obj]);
+
+			var obj1 = new Proxy({}, {
+				get: function(target, key, receiver) {
+					console.log(`getting ${key}!`);
+					console.log(666,target,key,receiver);
+					return Reflect.get(target, key, receiver);
+				},
+				set: function(target, key, value, receiver) {
+					console.log(`setting ${key}!`);
+					console.log(999,target,key,value,receiver);
+					return Reflect.set(target, key, value, receiver);
+				}
+			});
+			obj1.test = 123;
+			
+			let obj2 = {
+				name: "bgg",
+				age: 88,
+				gender: "女"
+			}
+			obj2 = new Proxy(obj2,{
+				get: function(target,name){
+					console.log("获取",target);
+					return name in target ? target[name]:"哈哈哈";
+				},
+				set: function(target,name,value){
+					console.log("设置",target,name,value);
+					return target[name] = value;
+				}
+			})
+			console.log(222,obj2.name);
+			console.log(222,obj2.test);
+			obj2.name = "小明";
+			console.log(obj2.name);
+			
+		</script>
+	</body>
+
+</html>
