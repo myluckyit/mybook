@@ -5,5 +5,5 @@
 * [nuxt默认模板和默认布局](lesson/4.nuxt默认模板和默认布局.md)
 * [asyncData方法获取数据](lesson/5.asyncData方法获取数据.md)
 * [定义页面独立meta](lesson/6.定义页面独立meta.md)
-	* [踩坑系列](lesson/踩坑系列/踩坑系列.md)
+* [踩坑系列](lesson/踩坑系列/踩坑系列.md)
 	* [nuxt.js切换路由不执行asyncData问题](lesson/踩坑系列/1.nuxt.js切换路由不执行asyncData问题.md)
