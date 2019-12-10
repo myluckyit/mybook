@@ -2,3 +2,5 @@
 	* [订单功能数据丢失问题](lesson/1.订单功能数据丢失问题.md)
 	* [html新特性等](lesson/2.html新特性等.md)
 	* [一些常用方法的实现](lesson/3.一些常用方法的实现.md)
+	* [vue项目中使用微信分享](lesson/4.vue项目中微信分享.md)
+	* [base64和buffer或blob相互转换](lesson/5.base64和buffer或blob相互转换.md)
