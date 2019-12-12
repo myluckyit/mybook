@@ -4,3 +4,4 @@
 	* [一些常用方法的实现](lesson/3.一些常用方法的实现.md)
 	* [vue项目中使用微信分享](lesson/4.vue项目中微信分享.md)
 	* [base64和buffer或blob相互转换](lesson/5.base64和buffer或blob相互转换.md)
+	* [图片剪切](lesson/6.图片剪切.md)
