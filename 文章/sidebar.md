@@ -5,3 +5,7 @@
 	* [vue项目中使用微信分享](lesson/4.vue项目中微信分享.md)
 	* [base64和buffer或blob相互转换](lesson/5.base64和buffer或blob相互转换.md)
 	* [图片剪切](lesson/6.图片剪切.md)
+	* [百度统计埋点](lesson/7.百度统计埋点.md)
+	* [qq微信登录](lesson/8.qq微信登录.md)
+	* [音频自动播放](lesson/9.音频自动播放.md)
+	* [qq微博分享](lesson/10.qq微博分享.md)
