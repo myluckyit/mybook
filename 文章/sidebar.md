@@ -10,3 +10,4 @@
 	* [音频自动播放](lesson/9.音频自动播放.md)
 	* [qq微博分享](lesson/10.qq微博分享.md)
 	* [vue表单验证插件的使用](lesson/11.vue表单验证插件的使用.md)
+	* [axios的post请求](lesson/12.axios的post请求.md)
