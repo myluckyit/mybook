@@ -9,3 +9,4 @@
 	* [qq微信登录](lesson/8.qq微信登录.md)
 	* [音频自动播放](lesson/9.音频自动播放.md)
 	* [qq微博分享](lesson/10.qq微博分享.md)
+	* [vue表单验证插件的使用](lesson/11.vue表单验证插件的使用.md)
