@@ -12,3 +12,4 @@
 	* [vue表单验证插件的使用](lesson/11.vue表单验证插件的使用.md)
 	* [axios的post请求](lesson/12.axios的post请求.md)
 	* [实现图片拖拽上传功能](lesson/13.实现图片拖拽上传功能.md)
+	* [解决vue中bus传参问题](lesson/14.解决vue中bus传参问题.md)
