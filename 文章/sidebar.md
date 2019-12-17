@@ -11,3 +11,4 @@
 	* [qq微博分享](lesson/10.qq微博分享.md)
 	* [vue表单验证插件的使用](lesson/11.vue表单验证插件的使用.md)
 	* [axios的post请求](lesson/12.axios的post请求.md)
+	* [实现图片拖拽上传功能](lesson/13.实现图片拖拽上传功能.md)
