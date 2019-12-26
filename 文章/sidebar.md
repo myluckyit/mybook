@@ -13,3 +13,4 @@
 	* [axios的post请求](lesson/12.axios的post请求.md)
 	* [实现图片拖拽上传功能](lesson/13.实现图片拖拽上传功能.md)
 	* [解决vue中bus传参问题](lesson/14.解决vue中bus传参问题.md)
+	* [nvm安装后node生效但是npm不生效](lesson/15.nvm安装后node生效但是npm不生效.md)
