@@ -12,6 +12,7 @@
 		* [session](lesson/koa/9.session.md)
 	* [egg](lesson/egg/1.egg介绍.md)
 		* [egg快速入门](lesson/egg/2.egg快速入门.md)
+		* [ejs模板引擎](lesson/egg/2.3.配置模板引擎.md)
 	* [mongodb](lesson/mongodb/1.mongodb简介.md)
 		* [mongodb的基本使用](lesson/mongodb/2.mongodb的基本使用.md)
 		* [封装数据库的常用操作](lesson/mongodb/3.封装数据库的常用操作.md)
