@@ -16,6 +16,7 @@
 		* [egg安全机制csrf](lesson/egg/4.egg安全机制csrf.md)
 		* [cookie的使用](lesson/egg/5.cookie的使用.md)
 		* [session的使用](lesson/egg/6.session的使用.md)
+		* [egg请求外部接口](lesson/egg/7.egg请求外部接口.md)
 	* [mongodb](lesson/mongodb/1.mongodb简介.md)
 		* [mongodb的基本使用](lesson/mongodb/2.mongodb的基本使用.md)
 		* [封装数据库的常用操作](lesson/mongodb/3.封装数据库的常用操作.md)
