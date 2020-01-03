@@ -17,6 +17,7 @@
 		* [cookie的使用](lesson/egg/5.cookie的使用.md)
 		* [session的使用](lesson/egg/6.session的使用.md)
 		* [egg请求外部接口](lesson/egg/7.egg请求外部接口.md)
+		* [心理测评系统技术规划](lesson/egg/心理测评系统技术规划.md)
 	* [mongodb](lesson/mongodb/1.mongodb简介.md)
 		* [mongodb的基本使用](lesson/mongodb/2.mongodb的基本使用.md)
 		* [封装数据库的常用操作](lesson/mongodb/3.封装数据库的常用操作.md)
