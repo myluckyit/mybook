@@ -14,3 +14,5 @@
 	* [实现图片拖拽上传功能](lesson/13.实现图片拖拽上传功能.md)
 	* [解决vue中bus传参问题](lesson/14.解决vue中bus传参问题.md)
 	* [nvm安装后node生效但是npm不生效](lesson/15.nvm安装后node生效但是npm不生效.md)
+	* [代码监控](lesson/17.代码监控.md)
+	* [nodejs部署项目到Linux服务器](lesson/18.nodejs部署.md)
